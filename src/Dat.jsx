@@ -1,0 +1,18 @@
+export var brands = [
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a11115d3497.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a1112631afd.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110c691c61.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110b53d44c.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a11115d3497.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a1112631afd.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110c691c61.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110b53d44c.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a11115d3497.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a1112631afd.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110c691c61.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110b53d44c.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a11115d3497.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a1112631afd.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110c691c61.png",
+  "https://digitalsahuji.com/storage/app/public/brand/2023-07-02-64a110b53d44c.png",
+];
