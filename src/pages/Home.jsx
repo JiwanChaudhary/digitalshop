@@ -17,6 +17,7 @@ import { categoryData } from "../utils/category-data";
 
 function Home() {
   let [cat, setCat] = useState([]);
+
   useEffect(() => {
     // axios.get("https://dummyjson.com/products/categories").then((res) => {
     //   setCat(res.data);

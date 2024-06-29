@@ -14,13 +14,8 @@ import HeadphonePage from "../pages/headphone";
 import SpeakerPage from "../pages/speaker";
 import CategorySidebar from "./category-sidebar";
 import HeaderContent from "./header-content";
-import { categoryDetailData } from "../utils/category-detail-data";
-import { getAllData, shuffleData } from "../utils/get-all-data";
 
 function Header() {
-  console.log(categoryDetailData);
-  console.log(getAllData());
-  console.log(shuffleData(getAllData()));
   return (
     <>
       {/* <section className="bg-success-subtle py-2">

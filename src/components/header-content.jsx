@@ -1,9 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CartContext from "./CartContext";
 import { Link } from "react-router-dom";
+import { getAllData, getItemsByName, shuffleData } from "../utils/get-all-data";
 
 const HeaderContent = () => {
-  let { state, dispatch } = useContext(CartContext);
+    let { state, dispatch, setAllProducts } = useContext(CartContext);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    setAllProducts(getItemsByName(searchTerm));
+  };
+
+//   if(searchTerm.length < 1) {
+//     setAllProducts(shuffleData(getAllData()));
+//   }
 
   return (
     <header className="py-3">
@@ -24,8 +35,14 @@ const HeaderContent = () => {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <button className="btn btn-primary m" type="submit">
+              <button
+                className="btn btn-primary m"
+                type="submit"
+                disabled={searchTerm.length < 2}
+                onClick={(e) => handleSearch(e)}
+              >
                 <i className="bi bi-search"></i>
               </button>
             </form>

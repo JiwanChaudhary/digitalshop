@@ -1,19 +1,17 @@
 import axios from "axios";
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { categoryDetailData } from "../utils/category-detail-data";
 import ProductCard from "../components/product-card";
 import { getAllData, shuffleData } from "../utils/get-all-data";
+import CartContext from "../components/CartContext";
 
 function Products() {
-  let [dataa, setDataa] = useState([]);
+  let { allProducts, setAllProducts } = useContext(CartContext);
 
   useEffect(() => {
-    // axios.get("https://dummyjson.com/products").then((res) => {
-    //   setDataa(res.data.products);
-    // });
-    setDataa(shuffleData(getAllData()));
+    setAllProducts(shuffleData(getAllData()));
   }, []);
 
   return (
@@ -27,8 +25,7 @@ function Products() {
         <div>
           {/* #region laptop */}
           <div className="row">
-            <h2 className="text-center">All Products</h2>
-            {dataa.slice(0, 20).map((data, i) => (
+            {allProducts.slice(0, 20).map((data, i) => (
               <ProductCard
                 image={data.image}
                 name={data.name}
