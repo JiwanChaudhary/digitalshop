@@ -12,9 +12,15 @@ import KeyboardPage from "../pages/keyboard";
 import MousePage from "../pages/mouse";
 import HeadphonePage from "../pages/headphone";
 import SpeakerPage from "../pages/speaker";
+import CategorySidebar from "./category-sidebar";
+import HeaderContent from "./header-content";
+import { categoryDetailData } from "../utils/category-detail-data";
+import { getAllData, shuffleData } from "../utils/get-all-data";
 
 function Header() {
-  let { state, dispatch } = useContext(CartContext);
+  console.log(categoryDetailData);
+  console.log(getAllData());
+  console.log(shuffleData(getAllData()));
   return (
     <>
       {/* <section className="bg-success-subtle py-2">
@@ -27,106 +33,9 @@ function Header() {
         </div>
       </section> */}
 
-      <header className="py-3">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-3 ">
-              <Link to="/">
-                <img
-                  src="https://digitalsahuji.com/storage/app/public/company/2023-06-27-649a72e48c94a.png"
-                  alt=""
-                />
-              </Link>
-            </div>
-            <div className="col-lg-7">
-              <form className="d-flex" role="search">
-                <input
-                  className="form-control me-2 py-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button className="btn btn-primary m" type="submit">
-                  <i className="bi bi-search"></i>
-                </button>
-              </form>
-            </div>
-            <div className="col-lg-2">
-              <div className="d-flex gap-3">
-                <Link
-                  to={`/cart`}
-                  className="btn bg-primary-subtle rounded-circle position-relative"
-                >
-                  <i className="bi bi-cart"></i>
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {state.cart.length}
-                    <span className="visually-hidden">unread messages</span>
-                  </span>
-                </Link>
+      <HeaderContent />
 
-                <button
-                  type="button"
-                  className="btn bg-primary-subtle rounded-circle position-relative"
-                >
-                  <a className="btn btn-primary" href="#" role="button">
-                    Login
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <nav className="navbar navbar-expand-lg  menu">
-        <div className="container ">
-          <div className="dropdown mn">
-            <button
-              className="btn btn-light dropdown-toggle w"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Categories
-            </button>
-            <ul className="dropdown-menu">
-              {categoryData.map((cat, i) => (
-                <li key={i}>
-                  <a className="dropdown-item" href={cat.slug}>
-                    {cat.name}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a className="dropdown-item" href="/">
-                  All
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <CategorySidebar />
 
       <Routes>
         <Route path="/" element={<Home />} />

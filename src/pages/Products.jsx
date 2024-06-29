@@ -4,17 +4,18 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { categoryDetailData } from "../utils/category-detail-data";
 import ProductCard from "../components/product-card";
+import { getAllData, shuffleData } from "../utils/get-all-data";
 
 function Products() {
   let [dataa, setDataa] = useState([]);
+
   useEffect(() => {
     // axios.get("https://dummyjson.com/products").then((res) => {
     //   setDataa(res.data.products);
     // });
-    setDataa(categoryDetailData);
+    setDataa(shuffleData(getAllData()));
   }, []);
 
-  console.log(categoryDetailData.laptop, "cate data");
   return (
     <>
       <div className="container shadow">
@@ -26,8 +27,8 @@ function Products() {
         <div>
           {/* #region laptop */}
           <div className="row">
-            <h2 className="text-center">Laptop</h2>
-            {categoryDetailData.laptop.slice(0, 4).map((data, i) => (
+            <h2 className="text-center">All Products</h2>
+            {dataa.slice(0, 20).map((data, i) => (
               <ProductCard
                 image={data.image}
                 name={data.name}
@@ -35,13 +36,13 @@ function Products() {
                 key={i}
               />
             ))}
-            <h3 className="text-center">
+            {/* <h3 className="text-center">
               <a href="/laptops">Explore all Laptop</a>
             </h3>
-            <hr />
+            <hr /> */}
           </div>
           {/* #region pc */}
-          <div className="row">
+          {/* <div className="row">
             <h2 className="text-center">PC</h2>
             {categoryDetailData.pc.slice(0, 4).map((data, i) => (
               <ProductCard
@@ -55,9 +56,9 @@ function Products() {
               <a href="/pcs">Explore all PCs</a>
             </h3>
             <hr />
-          </div>
+          </div> */}
           {/* #region speakers */}
-          <div className="row">
+          {/* <div className="row">
             <h2 className="text-center">Speakers</h2>
             {categoryDetailData.speaker.slice(0, 4).map((data, i) => (
               <ProductCard
@@ -71,9 +72,9 @@ function Products() {
               <a href="/speakers">Explore all Speakers</a>
             </h3>
             <hr />
-          </div>
+          </div> */}
           {/* #region Headphones */}
-          <div className="row">
+          {/* <div className="row">
             <h2 className="text-center">Headphones</h2>
             {categoryDetailData.headphone.slice(0, 4).map((data, i) => (
               <ProductCard
@@ -87,9 +88,9 @@ function Products() {
               <a href="/headphones">Explore all Headphones</a>
             </h3>
             <hr />
-          </div>
+          </div> */}
           {/* #region  Keyboard*/}
-          <div className="row">
+          {/* <div className="row">
             <h2 className="text-center">Keyboard</h2>
             {categoryDetailData.keyboard.slice(0, 4).map((data, i) => (
               <ProductCard
@@ -103,9 +104,9 @@ function Products() {
               <a href="/keyboards">Explore all Keyboards</a>
             </h3>
             <hr />
-          </div>
+          </div> */}
           {/* #region  Mouse*/}
-          <div className="row">
+          {/* <div className="row">
             <h2 className="text-center">Mouse</h2>
             {categoryDetailData.mouse.slice(0, 4).map((data, i) => (
               <ProductCard
@@ -119,7 +120,7 @@ function Products() {
               <a href="/mouse">Explore all Mouse</a>
             </h3>
             <hr />
-          </div>
+          </div> */}
         </div>
         <hr />
       </div>
