@@ -1,31 +1,31 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CartContext from "./CartContext";
 import { Link } from "react-router-dom";
 import { getAllData, getItemsByName, shuffleData } from "../utils/get-all-data";
 
 const HeaderContent = () => {
-    let { state, dispatch, setAllProducts } = useContext(CartContext);
+  let { state, dispatch, setAllProducts } = useContext(CartContext);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setAllProducts(getItemsByName(searchTerm));
   };
-
-//   if(searchTerm.length < 1) {
-//     setAllProducts(shuffleData(getAllData()));
-//   }
+  useEffect(() => {
+    setAllProducts(shuffleData(getAllData()));
+  },[!searchTerm]);
 
   return (
     <header className="py-3">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-3 ">
-            <Link to="/">
-              <img
+            <Link to="/" style={{textDecoration: "none"}}>
+              {/* <img
                 src="https://digitalsahuji.com/storage/app/public/company/2023-06-27-649a72e48c94a.png"
                 alt=""
-              />
+              /> */}
+              <p>E-commerce</p>
             </Link>
           </div>
           <div className="col-lg-7">

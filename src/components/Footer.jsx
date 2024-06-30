@@ -4,15 +4,12 @@ function Footer() {
   return (
     <>
       {/* Footer */}
-      <footer className="text-center text-lg-start menu text-light">
+      <footer className="text-center text-lg-start menu text-light" style={{marginBottom: "0px"}}>
         {/* Section: Social media */}
-        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-          {/* Left */}
+        {/* <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div className="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
           </div>
-          {/* Left */}
-          {/* Right */}
           <div>
             <a href className="me-4 text-reset">
               <i className="fab fa-facebook-f" />
@@ -33,17 +30,11 @@ function Footer() {
               <i className="fab fa-github" />
             </a>
           </div>
-          {/* Right */}
-        </section>
-        {/* Section: Social media */}
-        {/* Section: Links  */}
-        <section className>
+        </section> */}
+        {/* <section className>
           <div className="container text-center text-md-start mt-5">
-            {/* Grid row */}
             <div className="row mt-3">
-              {/* Grid column */}
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                {/* Content */}
                 <h6 className="text-uppercase fw-bold mb-4">
                   <i className="fas fa-gem me-3" />
                   Company name
@@ -54,10 +45,7 @@ function Footer() {
                   elit.
                 </p>
               </div>
-              {/* Grid column */}
-              {/* Grid column */}
               <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                {/* Links */}
                 <h6 className="text-uppercase fw-bold mb-4">Products</h6>
                 <p>
                   <a href="#!" className="text-reset">
@@ -80,10 +68,7 @@ function Footer() {
                   </a>
                 </p>
               </div>
-              {/* Grid column */}
-              {/* Grid column */}
               <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                {/* Links */}
                 <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
                 <p>
                   <a href="#!" className="text-reset">
@@ -106,10 +91,7 @@ function Footer() {
                   </a>
                 </p>
               </div>
-              {/* Grid column */}
-              {/* Grid column */}
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                {/* Links */}
                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                 <p>
                   <i className="fas fa-home me-3" /> New York, NY 10012, US
@@ -125,25 +107,19 @@ function Footer() {
                   <i className="fas fa-print me-3" /> 986256365
                 </p>
               </div>
-              {/* Grid column */}
             </div>
-            {/* Grid row */}
           </div>
-        </section>
-        {/* Section: Links  */}
-        {/* Copyright */}
+        </section> */}
         <div
           className="text-center p-4"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
         >
           © {new Date().getFullYear()} Copyright: {" "}
           <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-            Major Project
+            E-commerce with recommendation system
           </a>
         </div>
-        {/* Copyright */}
       </footer>
-      {/* Footer */}
     </>
   );
 }
